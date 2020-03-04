@@ -3,10 +3,9 @@
         <div slot="nav-left" class="left"><div ></div></div>
         <div slot="nav-center">
             <div class="center">
-                <span>精选</span>
-                <span>商铺</span>
-                <span>详情</span>
-                <span>推荐</span>
+                <span :class="{isActived:currentIndex==index}" 
+                        v-for="(item,index) in title" :key="item"
+                        @click="titleTop(index)">{{item}}</span>
             </div>
         </div>
     </navBar>
@@ -15,8 +14,22 @@
 import navBar from 'components/common/NavBar/navBar'
 export default {
     name:'homeNavBar',
+    data(){
+        return {currentIndex:0}
+    },
+    props:{
+        title:Array
+    },
     components:{
         navBar
+    },
+    mouted(){
+        window.console.log(this.title)
+    },
+    methods:{
+        titleTop(index){
+            this.$emit('titleTop',index)
+        }
     }
 }
 </script>
@@ -36,5 +49,8 @@ export default {
 }
 .center span{
     flex: 1
+}
+.isActived{
+    color: seagreen;
 }
 </style>
