@@ -1,5 +1,5 @@
 <template>
-    <div ><div>{{$store.state.cartList}}</div>
+    <div >
         <detailBar :title="['精选','商铺','详情','推荐']"
                     @titleTop="themeTop"></detailBar>
         <div class="detail">

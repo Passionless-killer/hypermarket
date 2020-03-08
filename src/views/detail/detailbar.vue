@@ -1,6 +1,6 @@
 <template>
     <navBar>
-        <div slot="nav-left" class="left"><div ></div></div>
+        <div slot="nav-left" class="left" @click="back"><div></div></div>
         <div slot="nav-center">
             <div class="center">
                 <span :class="{isActived:currentIndex==index}" 
@@ -29,6 +29,9 @@ export default {
     methods:{
         titleTop(index){
             this.$emit('titleTop',index)
+        },
+        back(){
+           return history.go(-1)
         }
     }
 }
