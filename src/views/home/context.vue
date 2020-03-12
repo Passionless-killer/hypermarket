@@ -10,18 +10,6 @@
         <contextitem></contextitem>
         <contextitem></contextitem>
         <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
-        <contextitem></contextitem>
     </div>
 </template>
 <script>

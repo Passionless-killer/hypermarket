@@ -1,15 +1,15 @@
 <template>
-    <div>
-    <homeNavBar></homeNavBar>
-    <tabNav @sected='sected' :titles="['精选','流行','热销']" ref="tabNav1" v-show="isFixed"></tabNav>
-    <div class='home'>
-        <bscroll ref="scroll" @scrollPosition='scrollPosition'>
-            <swiper @imgLoad="imgLoad"></swiper>
-            <active></active>
-            <tabNav @sected='sected' :titles="['精选','流行','热销']" ref="tabNav2" v-show="!isFixed"></tabNav>
-            <contextbox></contextbox>
-        </bscroll>
-    </div>
+    <div class="homeView">
+        <homeNavBar></homeNavBar>
+        <tabNav @sected='sected' :titles="['精选','流行','热销']" ref="tabNav1" v-show="isFixed"></tabNav>
+        <div class='home'>
+            <bscroll ref="scroll" @scrollPosition='scrollPosition'>
+                <swiper @imgLoad="imgLoad"></swiper>
+                <active></active>
+                <tabNav @sected='sected' :titles="['精选','流行','热销']" ref="tabNav2" v-show="!isFixed"></tabNav>
+                <contextbox></contextbox>
+            </bscroll>
+        </div>
     </div>
 </template>
 <script>
@@ -34,11 +34,9 @@ export default {
     },
     activated(){
         this.$refs.scroll.scroll.scrollTo(0,this.saveY,0)
-        window.console.log(this.saveY)
     },
     deactivated(){
         this.saveY=this.$refs.scroll.scroll.startY
-        window.console.log(this.$refs.scroll.scroll.y)
     },
     methods:{
         imgLoad(){
@@ -56,8 +54,12 @@ export default {
 }
 </script>
 <style scoped>
+.homeView{
+    height:100vh;
+}
 .home{
     position: relative;
-    left: 0px
+    left: 0px;
+    height: calc(100% - 95px)
 }
 </style>

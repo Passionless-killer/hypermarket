@@ -10,14 +10,6 @@ export default {
     components:{
         buyCarItem
     },
-    data(){
-        return {buyCarinfo:null}
-    },
-    prop:{
-        buyCarinfo:{}
-    },
-    mounted(){
-        window.console.log(this.buyCarinfo)
-    }
+    props:{buyCarinfo:{}}
 }
 </script>

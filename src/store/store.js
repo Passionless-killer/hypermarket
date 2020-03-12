@@ -8,12 +8,15 @@ const store=new Vuex.Store({
     mutations:{
         cart(state,payload){
             state.cartList.push(payload)
+        },
+        check(state,payload){
+            state.cartList.find(payload)
         }
     },
     actions:{                    
         cartList(context,aa){
-            context.commit('cart',aa)
-            window.console.log("--")
+            var a={aa,checked:true}
+            context.commit('cart',a)
         }
     }
 })

@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div class='detail-view'>
         <detailBar :title="['精选','商铺','详情','推荐']"
                     @titleTop="themeTop"></detailBar>
         <div class="detail">
@@ -13,9 +13,9 @@
             </bscroll>
         </div>
         <navBar class="bottom-bar">
-            <div slot="nav-left"><img src="assets/img/profile.png"/>收藏</div>
-            <div slot="nav-center" @click="cartList"><img src="assets/img/profile.png" >加入购物车</div>
-            <div slot="nav-right"><img src="assets/img/profile.png">收藏</div>
+            <div slot="nav-left"><img src="~assets/img/profile.png"/>收藏</div>
+            <div slot="nav-center" @click="cartList"><img src="~assets/img/profile.png" >加入购物车</div>
+            <div slot="nav-right"><img src="~assets/img/profile.png">收藏</div>
         </navBar>
     </div>
 </template>
@@ -39,7 +39,6 @@ export default {
             this.tabHeight=this.$refs.tabNav2.$el.offsetHeight
         },
         themeTop(index){
-            window.console.log(this.titleTop)
             this.$refs.scroll.scroll.scrollTo(0,-this.titleTop[index],1000)
         },
         cartList(){
@@ -59,13 +58,19 @@ export default {
 .detail{
     position: relative;
     left: 0px;
-    height: 700px;
+    height: calc(100% - 95px);
 }
 .bottom-bar{
     width:100%;
-    height:40px;
+    height:50px;
     position: relative;
     bottom: 0;
     left: 0;
+}
+.bottom-bar img{
+    
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
 }
 </style>
