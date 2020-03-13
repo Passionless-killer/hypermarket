@@ -11,7 +11,7 @@
             <span class="money">￥150</span>
         </div>
         <div class="number">
-            <span class="num">x1</span>
+            <span class="num">x {{number}}</span>
             <div class="quantity">
               <span class="add" @click="add">+</span>
               <span class="amount">{{number}}</span>
@@ -38,10 +38,12 @@ export default {
         this.checked=this.buyCariteminfo.checked
       },
       add(){
-          this.number++
+          this.number++;
+          this.buyCariteminfo.number=this.number
       },
       sub(){
           this.number--
+          this.buyCariteminfo.number=this.number
       }
     }
 }
@@ -88,7 +90,6 @@ export default {
 .number{
   width:22%;
   display: inline-block;
-  vertical-align: middle;
 }
 .number .num{
   display: inline-block;
@@ -111,5 +112,12 @@ export default {
     }
 .shop div.checkbox img{
   width:30px
+}
+.shop .number .num{
+  margin:4px auto
+}
+.shop .number .add,.sub,.amount{
+  border:1px solid #bfadad;
+  padding:2px 4px
 }
 </style>

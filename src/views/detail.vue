@@ -42,7 +42,7 @@ export default {
             this.$refs.scroll.scroll.scrollTo(0,-this.titleTop[index],1000)
         },
         cartList(){
-            this.$store.dispatch('cartList',111)
+            this.$store.dispatch('cartList',111).then((data)=>{window.console.log(data)})
         }
     },
     mounted(){
