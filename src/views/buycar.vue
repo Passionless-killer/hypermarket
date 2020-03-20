@@ -8,7 +8,7 @@
                 <buyCar :buyCarinfo="buyCarinfo"></buyCar>
             </bscroll>
         </div>
-        <carbuyBar></carbuyBar>
+        <carbuyBar :cartList="buyCarinfo"></carbuyBar>
     </div>
 </template>  
 <script>

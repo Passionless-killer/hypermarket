@@ -15,14 +15,14 @@ export default {
     data(){
         return {checked:true}
     },
+    props:{cartList:{}},
     components:{
         navBar
     },
     methods:{
         checkAll(){
             this.checked=!this.checked;
-            this.$store.state.cartList.map(e=>{e.checked=this.checked});
-            window.console.log(this.$store.state.cartList)
+            this.cartList.map(e=>{window.console.log(e.checked);e.checked=this.checked});
         },
         totle(){
             
