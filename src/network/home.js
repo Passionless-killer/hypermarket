@@ -1,8 +1,10 @@
 
 import axios from 'axios'
-axios({
-    url:'http://27.2.7.32.32:8000/home/multidata'
-}).then(res=>{
-  window.console.log(res)
+const a=axios({
+  method: 'post',
+  url: 'ju',
+  data: {
+    K: '工程'
+  }
 })
-export default  axios
+export default  a

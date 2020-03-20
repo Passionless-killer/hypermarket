@@ -40,7 +40,6 @@ export default {
     },
     methods:{
         imgLoad(){
-             window.console.log(this.$refs.tabNav2.$el.offsetHeight,this.$refs.tabNav2)
             this.tabHeight=400
         },
         scrollPosition(position){
@@ -50,6 +49,14 @@ export default {
             this.$refs.tabNav1.$data.currentIndex=index
             this.$refs.tabNav2.$data.currentIndex=index
         }
+    },
+    created(){
+        this.$axios.post('/api/group/?start=50').then(res => {
+        window.console.log(res)
+      }).catch(err => {
+        window.console.log(err)
+      })
+
     }
 }
 </script>

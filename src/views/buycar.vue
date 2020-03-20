@@ -28,6 +28,9 @@ export default {
     methods:{
         buycarLenght(){
             return this.$store.state.cartList.length
+        },
+        checkAll(checked){
+            this.buyCarinfo.map(e=>{e.checked=checked;window.console.log(e.checked)})
         }
     },
     activated(){

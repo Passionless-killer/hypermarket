@@ -1,20 +1,20 @@
 <template>
     <div class="shop">
         <div class="checkbox" @click="checkbox" >
-          <img v-show="!checked" src='~assets/img/check.png'/>
-          <img v-show="checked" src='~assets/img/checked.png'/>
+          <img v-show="!this.buyCariteminfo.checked" src='~assets/img/check.png'/>
+          <img v-show="this.buyCariteminfo.checked" src='~assets/img/checked.png'/>
         </div>
         <img src="~assets/img/shop.jpg" />
         <div class="infos">
             <span class="name">{{this.buyCariteminfo.aa}}</span> 
             <span class="info">m码；200g；粉色</span> 
-            <span class="money">￥150</span>
+            <span class="money">￥{{this.buyCariteminfo.price}}</span>
         </div>
         <div class="number">
-            <span class="num">x {{number}}</span>
+            <span class="num">x {{this.buyCariteminfo.number}}</span>
             <div class="quantity">
               <span class="add" @click="add">+</span>
-              <span class="amount">{{number}}</span>
+              <span class="amount">{{this.buyCariteminfo.number}}</span>
               <span class="sub" @click="sub">-</span>
             </div>
         </div>
@@ -23,27 +23,18 @@
 <script>
 export default {
     name:'buyCarItem',
-    data(){
-      return {checked:true,number:1}
-    },
     props:{
         buyCariteminfo:{}
-    },
-    created(){
-      this.checked=this.buyCariteminfo.checked
     },
     methods:{
       checkbox(){
         this.buyCariteminfo.checked=! this.buyCariteminfo.checked
-        this.checked=this.buyCariteminfo.checked
       },
       add(){
-          this.number++;
-          this.buyCariteminfo.number=this.number
+          this.buyCariteminfo.number++
       },
       sub(){
-          this.number--
-          this.buyCariteminfo.number=this.number
+          this.buyCariteminfo.number>1?this.buyCariteminfo.number--:this.buyCariteminfo.number
       }
     }
 }

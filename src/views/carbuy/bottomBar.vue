@@ -1,11 +1,11 @@
 <template>
     <navBar class="carbuy-bar">
         <div slot="nav-left" @click="checkAll">
-          <img v-show="!checked" src='~assets/img/check.png'/>
-          <img v-show="checked" src='~assets/img/checked.png'/>
+          <img v-show="!checkBut()" src='~assets/img/check.png'/>
+          <img v-show="checkBut()" src='~assets/img/checked.png'/>
         </div>
-        <div slot="nav-center">去结算( {{ this.$store.state.cartList.length}})</div>
-        <div slot="nav-right">总计( {{ }} )</div>
+        <div slot="nav-center">总计({{total()}})</div>
+        <div slot="nav-right">去结算</div>
     </navBar>
 </template>
 <script>
@@ -22,10 +22,26 @@ export default {
     methods:{
         checkAll(){
             this.checked=!this.checked;
-            this.cartList.map(e=>{window.console.log(e.checked);e.checked=this.checked});
+           this.cartList.map(e=>{e.checked=this.checked});
+           window.console.log(this.cartList)
         },
-        totle(){
-            
+        checkBut(){
+            if(!this.cartList||this.cartList.length==0){
+                return  this.checked
+            }else{
+           return  this.checked=this.cartList.every(e=>e.checked==true);
+            }
+        },
+        total(){   
+            var sum = 0
+            if(!this.cartList||this.cartList.length==0){
+                return sum=0;
+            }else{
+                var a=this.cartList.filter(e=>{return e.checked==true});
+                var b=a.map(e=>{return e.price*e.number});
+                for(let i of b){sum+=i}
+             }
+                return sum
         }
     }
 }

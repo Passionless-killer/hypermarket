@@ -16,7 +16,7 @@ const store=new Vuex.Store({
     actions:{                    
         cartList(context,aa){
             return new Promise((resolve)=>{
-                var a={aa,checked:true}
+                var a={aa,checked:true,number:1,price:150}
                 context.commit('cart',a)
                 resolve("添加成功")
             })
