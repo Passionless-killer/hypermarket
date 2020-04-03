@@ -1,29 +1,26 @@
 <template>
-    <div class="contextitem" @click="detailid(11)">
-        <div><img src='~assets/img/home/swiper-2.jpg'></div>
-        <p class="item">潮流女装体恤</p>
+    <div class="contextitem" @click="detailid(goodsItem.ID)">
+        <div><img :src='goodsItem.ImageFile'></div>
+        <p class="item">{{goodsItem.Name}}</p>
     </div>
 </template>
 <script>
 export default {
     name:'contextitem',
+    props:['goodsItem'],
     methods:{
         detailid(id){
-            window.console.log(id)
-            this.$router.push({path:'/detail',query:{type:id}})
+            this.$router.push({path:'/detail',query:{ID:id}})
         }
     }
 }
 </script>
 <style scoped>
 .contextitem{
-    width: 50%;
-    position: relative;
+    width: 45%;
     display: inline-block;
-    padding: auto
 }
 .contextitem div{
-    border:1px red solid;
     height: 50;
     
     margin: auto

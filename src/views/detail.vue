@@ -6,10 +6,9 @@
             <bscroll ref="scroll">
                 <swiper></swiper>
                 <p class="pro-detail">潮流女装潮流女装潮流女装潮流女装潮流流女装潮流女装潮流女装潮流女装潮流女装潮流女装潮流女装</p>
-                <div class="detail">
+                
                     <shop ref="shop"></shop>
                     <goods ref="goods"></goods>
-                </div>
             </bscroll>
         </div>
         <navBar class="bottom-bar">
@@ -46,8 +45,8 @@ export default {
         }
     },
     mounted(){
-        this.titleTop.push(this.$refs.shop.$el.offsetHeight)
-        this.titleTop.push(this.$refs.goods.$el.offsetHeight)
+        this.titleTop.push(this.$refs.shop.$el.offsetTop);
+        this.titleTop.push(this.$refs.goods.$el.offsetTop)
     }
 }
 </script>
@@ -72,5 +71,12 @@ export default {
     width: 24px;
     height: 24px;
     vertical-align: middle;
+}
+.pro-detail{
+    font-size:15pt;
+    fot-weight:100
+}
+.box{
+    width:100%
 }
 </style>

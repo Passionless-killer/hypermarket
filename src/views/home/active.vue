@@ -1,31 +1,24 @@
 <template>
-    <div class='activemodu'>
-        <div><img src='~assets/img/buycar.png'/><div>倒计时</div></div>
-        <div><img src='~assets/img/buycar.png'/><div>倒计时</div></div>
-        <div><img src='~assets/img/buycar.png'/><div>倒计时</div></div>
-        <div><img src='~assets/img/buycar.png'/><div>倒计时</div></div>
+    <div>
+        <box :boxCon="boxCon"></box>
     </div>
 </template>
 <script>
+import box from '@/components/content/box'
 export default {
-    name:'active'
+    name:'active',
+    components:{box},
+    data(){
+        return {
+            boxCon:[
+                {"src":"@/assets/img/buycar.png","name":"倒计时"},
+                {"src":"@/assets/img/buycar.png","name":"倒计时"},
+                {"src":"@/assets/img/buycar.png","name":"倒计时"},
+                {"src":"@/assets/img/buycar.png","name":"倒计时"}
+            ]
+        }
+    }
 }
 </script>
 <style scoped>
-.activemodu{
-    width: 100%;
-    display: flex;
-    text-align: center;
-    padding: 10px 0 15px 0;
-    border-bottom: 9px #f6f6f6 solid;
-    font-size: 18px
-}
-.activemodu div{
-    flex:1;
-}
-.activemodu img{
-    width: 65px;
-    height:65px;
-    border-radius: 50%;
-}
 </style>

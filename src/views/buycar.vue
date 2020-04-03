@@ -38,7 +38,7 @@ export default {
     }
 }
 </script>
-<style>
+<style  scoped>
 .carbuy-view{
     height:100vh
 }

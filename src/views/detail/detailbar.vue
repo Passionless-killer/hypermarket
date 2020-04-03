@@ -28,6 +28,7 @@ export default {
     },
     methods:{
         titleTop(index){
+            this.currentIndex=index
             this.$emit('titleTop',index)
         },
         back(){
@@ -38,15 +39,15 @@ export default {
 </script>
 <style scoped>
 .left{
-    width:20px;
-    height:20px;
+    width:18px;
+    height:18px;
     border-top:2px solid #000;
     border-right:2px solid #000;
     border-left: 2px solid transparent;
     border-bottom: 2px solid transparent;
     transform: rotate(45deg);
-    margin-top: 10px
-}
+    margin-top: 12px;
+    margin-left: 16px;}
 .center{
     display: flex;
 }

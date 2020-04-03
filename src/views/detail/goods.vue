@@ -17,11 +17,18 @@ export default {
 </script>
 <style scoped>
 .goods{
+    
+    width:100%;
     position: relative;
     top:10px
 }
 .goods img{
     width:100%;
     height:150px
+}
+.goods h4{
+    text-align: left;
+    margin: 4px auto 6px 15px;
+        font-size: 16pt;
 }
 </style>

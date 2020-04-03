@@ -3,7 +3,7 @@
             <h4>店铺</h4>
             <div class="shop-name">
                 <img src="~assets/img/buycar.png"/>
-                <p>女装店</p>
+                <p>美么女装店</p>
             </div>
             <div class="shop-rink">
                 <p>w物流</p>
@@ -45,7 +45,7 @@ export default {
 }
 .shop h4{
     text-align: left;
-    position: relative;
-    margin: 4px auto 4px 10px;
+    margin: 4px auto 6px 15px;
+        font-size:16pt;
 }
 </style>
