@@ -15,28 +15,17 @@ export default {
     components:{box,list,top},
     data(){
       return {
-         boxCon1:[
-                {"src":"~assets/img/profile/home.png","name":"待付款"},
-                {"src":"~assets/img/profile/plant.png","name":"待发货"},
-                {"src":"~assets/img/profile/diamond.png","name":"待收货"},
-                {"src":"~assets/img/profile/crystal-ball.png","name":"退货"}
-            ],
-          boxCon2:[
-                {"src":"src/assets/img/profile/champ.png","name":"优惠券"},
-                {"src":"~assets/img/profile/jifen.png","name":"积分"},
-                {"src":"~assets/img/profile/yue.png","name":"余额"},
-                {"src":"~assets/img/profile/mywallet.png","name":"我的订单"}
-            ],
+         boxCon1:[],
+          boxCon2:[],
             list:{
               title:"人气推荐",
-              datas:[
-                {"src":"~assets/img/profile/wedding.jpg",name:"婚纱"},
-                {src:"~assets/img/profile/wedding.jpg",name:"婚纱"},
-                {src:"~assets/img/profile/wedding.jpg",name:"婚纱"},
-                {src:"~assets/img/profile/wedding.jpg",name:"婚纱"}
-              ]
+              datas:[ ]
             }
       }
+    },
+    created(){
+        
+        this.$axios.get('/mockdata').then(res=>{this.boxCon1=this.boxCon2=res.data.active;this.list.datas=res=res.data.active})
     }
 }
 </script>

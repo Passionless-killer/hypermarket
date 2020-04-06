@@ -9,8 +9,8 @@
                 <tabNav @sected='sected' :titles="['精选','流行','热销']" ref="tabNav2" v-show="!isFixed"></tabNav>
                 <contextbox :goods="goods"></contextbox>
             </bscroll>
+                <gotop v-show="toTop" @click.native="goTOTop"></gotop>
         </div>
-        <gotop v-show="toTop"></gotop>
     </div>
 </template>
 <script>
@@ -60,6 +60,9 @@ export default {
             this.toTop=-(position.y)>50
             this.isFixed=-(position.y)>this.tabHeight
         },
+        goTOTop(){
+            this.$refs.scroll.scroll.scrollTo(0,0)
+            },
         sected(index){
             this.$refs.tabNav1.$data.currentIndex=index
             this.$refs.tabNav2.$data.currentIndex=index

@@ -10,13 +10,11 @@ export default {
     components:{box},
     data(){
         return {
-            boxCon:[
-                {"src":"@/assets/img/buycar.png","name":"倒计时"},
-                {"src":"@/assets/img/buycar.png","name":"倒计时"},
-                {"src":"@/assets/img/buycar.png","name":"倒计时"},
-                {"src":"@/assets/img/buycar.png","name":"倒计时"}
-            ]
+            boxCon:[ ]
         }
+    },
+    created(){
+        this.$axios.get('/mockdata').then(res=>{this.boxCon=res.data.active})
     }
 }
 </script>

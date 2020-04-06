@@ -74,7 +74,7 @@ export default {
 }
 .pro-detail{
     font-size:15pt;
-    fot-weight:100
+    font-weight:100
 }
 .box{
     width:100%

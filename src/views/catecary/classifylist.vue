@@ -2,16 +2,21 @@
  <div class="list">
           <ul>
             <li><a >推荐分类</a></li>
-            <li><a href="#type2">母婴玩具</a></li>
-            <li><a>时尚女装</a></li>
-            <li><a>优雅男装</a></li>
-            <li><a>母婴用品</a></li>
+            <li><a @click="jump(1)">母婴玩具</a></li>
+            <li><a @click="jump(2)">时尚女装</a></li>
+            <li><a @click="jump(3)">优雅男装</a></li>
+            <li><a @click="jump(4)">母婴用品</a></li>
           </ul>
         </div>
 </template>
 <script>
 export default {
-    name:"classifylist"
+    name:"classifylist",
+    methods:{
+      jump(num){
+          this.$emit('jump',num)
+      }
+    }
 }
 </script>
 <style scoped>

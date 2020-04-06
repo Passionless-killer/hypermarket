@@ -1,16 +1,11 @@
 <template>
-<div class="gotop" @click="gotop">
+<div class="gotop" >
     <img src="../../assets/img/home/top.png">
 </div>
 </template>
 <script>
 export default {
-        name:"gotop",
-        methods:{
-            gotop(){
-                window.console.log('111')
-            }
-        }
+        name:"gotop"
     }
 </script>
 <style scope>
